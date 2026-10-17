@@ -1,0 +1,18 @@
+{
+  "name": "janaseva",
+  "version": "1.0.0",
+  "description": "JanaSeva Community Resource Redistribution Platform",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix backend start",
+    "dev": "npm --prefix backend run dev",
+    "test": "npm --prefix backend test"
+  },
+  "keywords": [
+    "janaseva",
+    "community",
+    "platform"
+  ],
+  "author": "JanaSeva Team",
+  "license": "ISC"
+}
