@@ -6,6 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:home": "vite --port 3000",
+    "home": "npm run dev:home",
+    "dev:hub": "vite --port 3001 --open /hub",
+    "hub": "npm run dev:hub",
     "build": "vite build",
     "preview": "vite preview"
   },

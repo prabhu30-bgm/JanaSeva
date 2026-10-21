@@ -68,11 +68,15 @@ npm install
 ### 2. Run Development Server
 Start the development server:
 ```bash
+# Start the Main Web Portal (runs on port 3000)
 npm run dev
+
+# Or start directly to the Hub Kiosk Terminal (runs on port 3001)
+npm run dev:hub
 ```
-The application will be running at:
-- **Web Portal (Public, Volunteer, Admin)**: `http://localhost:3000/`
-- **Hub Kiosk Terminal**: `http://localhost:3000/hub` or `http://localhost:3000/kiosk`
+The application will be accessible at:
+- **Main Web Portal (Public, Volunteer, Admin)**: `http://localhost:3000/`
+- **Hub Kiosk Terminal**: `http://localhost:3000/hub` (or `http://localhost:3001/hub` if launched via `npm run dev:hub`)
 
 ### 3. Production Build
 To create a production-optimized build:
