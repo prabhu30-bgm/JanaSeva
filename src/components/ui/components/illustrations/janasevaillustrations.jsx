@@ -59,66 +59,24 @@ export const JanaSevaLogoImg = '/logo.png';
  */
 export function HeroHandoverIllustration({ width = '100%', height = 'auto', style = {}, className = '', alt = 'JanaSeva Community Redistribution Handover' }) {
   return (
-    <div
+    <img
+      src="/Hero.png"
+      alt={alt}
       className={className}
       style={{
         width,
         height,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'linear-gradient(135deg, #E6F4F1 0%, #FEF3C7 100%)',
+        maxWidth: '100%',
+        objectFit: 'cover',
         borderRadius: '16px',
-        padding: '24px',
-        boxSizing: 'border-box',
+        display: 'block',
         ...style
       }}
-      aria-label={alt}
-    >
-      <svg
-        viewBox="0 0 400 240"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ width: '100%', maxHeight: '240px' }}
-      >
-        {/* Decorative backdrop glow */}
-        <circle cx="200" cy="120" r="100" fill="#0F766E" fillOpacity="0.08" />
-        <circle cx="280" cy="90" r="45" fill="#F59E0B" fillOpacity="0.12" />
-
-        {/* JanaSeva Hub kiosk / building outline */}
-        <rect x="50" y="70" width="130" height="130" rx="12" fill="#FFFFFF" stroke="#0F766E" strokeWidth="3" />
-        <path d="M40 75 L115 35 L190 75 Z" fill="#0F766E" />
-        <rect x="75" y="110" width="35" height="40" rx="4" fill="#E6F4F1" stroke="#0F766E" strokeWidth="2" />
-        <rect x="125" y="120" width="40" height="80" rx="4" fill="#0F766E" />
-        <circle cx="115" cy="55" r="8" fill="#F59E0B" />
-
-        {/* Handover Table / Counter */}
-        <rect x="160" y="145" width="100" height="14" rx="4" fill="#92400E" opacity="0.8" />
-        <rect x="175" y="159" width="10" height="41" fill="#78350F" />
-        <rect x="235" y="159" width="10" height="41" fill="#78350F" />
-
-        {/* Resource Care Box with Heart & Ribbon */}
-        <rect x="190" y="105" width="45" height="40" rx="6" fill="#FBBF24" stroke="#D97706" strokeWidth="2" />
-        <rect x="208" y="105" width="9" height="40" fill="#0F766E" />
-        <rect x="190" y="120" width="45" height="8" fill="#0F766E" />
-        <circle cx="212" cy="115" r="4" fill="#EF4444" />
-
-        {/* Volunteer & Receiver Characters */}
-        {/* Volunteer (Left) */}
-        <circle cx="150" cy="100" r="14" fill="#F59E0B" />
-        <path d="M135 140 C135 120 165 120 165 140 Z" fill="#0F766E" />
-        {/* Receiver (Right) */}
-        <circle cx="270" cy="105" r="14" fill="#FBBF24" />
-        <path d="M255 145 C255 125 285 125 285 145 Z" fill="#D97706" />
-
-        {/* Ground shadow */}
-        <ellipse cx="200" cy="205" rx="160" ry="12" fill="#0F766E" fillOpacity="0.1" />
-      </svg>
-    </div>
+    />
   );
 }
 
-export const HeroHandoverImg = '/logo.png';
+export const HeroHandoverImg = '/Hero.png';
 
 /**
  * Hands Holding Sapling / Leaves
