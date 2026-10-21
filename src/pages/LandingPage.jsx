@@ -419,63 +419,6 @@ export function LandingPage() {
                 objectFit: 'cover'
               }}
             />
-
-            {/* Floating Live Available Resource Card */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '24px',
-                right: '24px',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: '16px',
-                padding: '14px 18px',
-                boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
-                border: '1px solid rgba(229, 231, 235, 0.8)',
-                minWidth: '220px'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <div
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '8px',
-                    backgroundColor: '#E6F4F1',
-                    color: '#0F766E',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '16px'
-                  }}
-                >
-                  🍲
-                </div>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: '13px', color: '#1F2937' }}>Food</div>
-                  <div style={{ fontSize: '11px', color: '#6B7280' }}>12 portions available</div>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#6B7280', marginBottom: '8px' }}>
-                <MapPin size={12} color="#0F766E" />
-                <span>JanaSeva Point 04 • 1.2 km away</span>
-              </div>
-
-              <span
-                style={{
-                  display: 'inline-block',
-                  backgroundColor: '#D1FAE5',
-                  color: '#059669',
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  padding: '2px 8px',
-                  borderRadius: '10px'
-                }}
-              >
-                ● Available Now
-              </span>
-            </div>
           </div>
         </div>
       </section>
