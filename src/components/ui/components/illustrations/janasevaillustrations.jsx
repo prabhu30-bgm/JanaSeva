@@ -7,39 +7,19 @@ import React from 'react';
 export function JanaSevaLogo({ size = 36, showTagline = true, color = 'var(--color-primary, #0F766E)', style = {} }) {
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none', ...style }}>
-      <svg
+      <img
+        src="/logo.png"
+        alt="JanaSeva Logo"
         width={size}
         height={size}
-        viewBox="0 0 64 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ flexShrink: 0 }}
-        aria-hidden="true"
-      >
-        <circle cx="32" cy="32" r="30" fill="#E6F4F1" />
-        {/* Left Leaf (Teal) */}
-        <path
-          d="M32 36C24 36 16 28 18 16C28 16 34 24 32 36Z"
-          fill="#0F766E"
-        />
-        {/* Right Leaf (Teal) */}
-        <path
-          d="M32 36C40 36 48 28 46 16C36 16 30 24 32 36Z"
-          fill="#115E59"
-        />
-        {/* Center Heart / Hands (Saffron & Warm) */}
-        <path
-          d="M32 46C24 40 22 34 26 29C29 25 32 28 32 28C32 28 35 25 38 29C42 34 40 40 32 46Z"
-          fill="#F59E0B"
-        />
-        {/* Lower supporting arc */}
-        <path
-          d="M20 46C26 52 38 52 44 46"
-          stroke="#0F766E"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-      </svg>
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          objectFit: 'contain',
+          borderRadius: '50%',
+          flexShrink: 0
+        }}
+      />
       <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
         <span
           style={{
@@ -71,7 +51,7 @@ export function JanaSevaLogo({ size = 36, showTagline = true, color = 'var(--col
   );
 }
 
-export const JanaSevaLogoImg = '/logo.svg';
+export const JanaSevaLogoImg = '/logo.png';
 
 /**
  * Hero Handover Illustration
@@ -138,7 +118,7 @@ export function HeroHandoverIllustration({ width = '100%', height = 'auto', styl
   );
 }
 
-export const HeroHandoverImg = '/logo.svg';
+export const HeroHandoverImg = '/logo.png';
 
 /**
  * Hands Holding Sapling / Leaves

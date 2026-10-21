@@ -10,8 +10,8 @@ The project follows a clean, single-application structure:
 
 ```text
 MCA_Project/
-├── public/                  # Static assets (clean SVG favicon & logo)
-│   └── logo.svg
+├── public/                  # Static assets
+│   └── logo.png
 ├── src/
 │   ├── components/          # Reusable UI & Layout Components
 │   │   ├── ui/              # Design System (Button, Card, Modal, Alert, Form, Logo)
