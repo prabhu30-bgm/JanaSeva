@@ -1,90 +1,101 @@
-# JanaSeva Platform
+# JanaSeva — Community Resource Redistribution Platform
 
-> **A secure, professional, community-driven resource redistribution platform connecting contributors, volunteers, and local Hubs.**
-
----
-
-## 📖 Architecture & Design Documentation
-
-All foundational blueprints, technical architecture, screen specifications, visual tokens, and security foundations have been comprehensively defined and implemented:
-
-1. [Product Blueprint v1.0](file:///c:/Desktop/MCA_Project/docs/product-blueprint.md): Vision, objectives, core workflows, inventory invariants, and Phase 1 boundaries.
-2. [Application Architecture & Module Map](file:///c:/Desktop/MCA_Project/docs/application-architecture.md): System topology, 3 application boundaries, shared domain engines, and database models.
-3. [Screen-by-Screen Blueprint](file:///c:/Desktop/MCA_Project/docs/screen-blueprint.md): Complete page hierarchy, wireframes, component breakdown, and UI state specifications for all 3 apps.
-4. [Visual Design System](file:///c:/Desktop/MCA_Project/docs/design-system.md): Clean editorial aesthetic, Inter typography scale, deep teal & warm saffron palette, and WCAG 2.2 AA rules.
-5. [Wireframes & Visual References](file:///c:/Desktop/MCA_Project/docs/wireframes-and-visual-references.md): 12-column layout grids, ASCII wireframes, and high-fidelity visual mockups for key screens.
-6. [Security, Permissions & Workflows](file:///c:/Desktop/MCA_Project/docs/security-and-workflows.md): Kiosk zero-trust design, Maker-Checker dual authorization, independent dispute reviews, non-custodial beneficiary privacy, and atomic quantity ledger.
-7. [Backend Foundation & Security](file:///c:/Desktop/MCA_Project/docs/backend-foundation.md): Modular Monolith Express backend, environment validation, Mongoose singleton manager, strict CORS, and health/readiness endpoints.
+> A modern, responsive web application for managing community resource redistribution, connecting donors, volunteers, and local hubs.
 
 ---
 
-## 🏛️ System Structure
+## 📁 Project Structure
 
-JanaSeva contains three distinct experiences sharing a unified backend engine:
+The project follows a clean, single-application structure:
 
 ```text
-                    JANASEVA PLATFORM
-                           |
-          +----------------+----------------+
-          |                |                |
-     VOLUNTEER APP     HUB TERMINAL     ADMIN DASHBOARD
-          |                |                |
-          +----------------+----------------+
-                           |
-                     Shared API Layer
-                           |
-        +------------------+------------------+
-        |                  |                  |
-   Authentication      Business Rules     Notifications
-        |                  |                  |
-        +------------------+------------------+
-                           |
-                    MongoDB Database
+MCA_Project/
+├── public/                  # Static assets (clean SVG favicon & logo)
+│   └── logo.svg
+├── src/
+│   ├── components/          # Reusable UI & Layout Components
+│   │   ├── ui/              # Design System (Button, Card, Modal, Alert, Form, Logo)
+│   │   ├── AdminShell.jsx   # Admin console layout shell
+│   │   ├── VolunteerShell.jsx # Volunteer portal layout shell
+│   │   ├── HubKioskShell.jsx # Self-service hub kiosk terminal
+│   │   ├── OnboardingModal.jsx
+│   │   └── ProtectedRoute.jsx
+│   ├── context/             # React Context (AuthContext)
+│   ├── pages/               # Application Pages
+│   │   ├── admin/           # Admin pages (Overview, Hubs, Inventory, Approvals, Users)
+│   │   ├── auth/            # Auth pages (Login, Register, Verify, Forgot Password)
+│   │   ├── DashboardPage.jsx
+│   │   ├── DonatePage.jsx
+│   │   ├── ExploreHubsPage.jsx
+│   │   ├── ExploreResourcesPage.jsx
+│   │   ├── HubDetailPage.jsx
+│   │   ├── ImpactPage.jsx
+│   │   ├── LandingPage.jsx
+│   │   ├── MyActivitiesPage.jsx
+│   │   ├── MyReservationsPage.jsx
+│   │   ├── NotificationsPage.jsx
+│   │   ├── ProfilePage.jsx
+│   │   └── ResourceDetailPage.jsx
+│   ├── services/            # API & WebSocket client services
+│   │   ├── api.js
+│   │   ├── authService.js
+│   │   ├── catalogueService.js
+│   │   ├── hubService.js
+│   │   ├── socket.js
+│   │   └── volunteerService.js
+│   ├── styles/              # Global CSS & theme styling
+│   │   ├── admin.css
+│   │   ├── hub.css
+│   │   └── volunteer.css
+│   ├── App.jsx              # Main App component with React Router
+│   └── main.jsx             # React entry point
+├── index.html               # Main HTML document
+├── package.json             # Single root package configuration
+├── vite.config.js           # Vite build & development configuration
+└── README.md                # Project documentation
 ```
-
-### The Three Applications:
-- **Volunteer Application (`apps/volunteer-web`)**: Empowering responsive PWA for discovery, 3 km synchronized map, reservations, custody ledger, and distribution logging.
-- **Hub Terminal (`apps/hub-terminal`)**: Kiosk-hardened self-service station on Hub laptops featuring QR scanning, ephemeral 45-second memory sessions, dynamic condition checklists, and physical capacity guards.
-- **Admin Dashboard (`apps/admin-web`)**: Actionable operational command center featuring an urgent SLA-waiting queue, Maker-Checker dual approvals, multi-bucket inventory matrix, and immutable audit logs.
 
 ---
 
-## 🛠️ Backend Quick Start
+## 🚀 Getting Started
 
-### 1. Install Dependencies
+### 1. Installation
+Install all dependencies with a single command:
 ```bash
-npm --prefix backend install
+npm install
 ```
 
-### 2. Environment Setup
-```bash
-# Copy template into active environment file (ignored by Git)
-cp backend/.env.example backend/.env
-```
-
-### 3. Run Development Server
+### 2. Run Development Server
+Start the development server:
 ```bash
 npm run dev
-# Server listens at http://localhost:5000
-# Liveness endpoint:  http://localhost:5000/api/health
-# Readiness endpoint: http://localhost:5000/api/health/ready
 ```
+The application will be running at:
+- **Web Portal (Public, Volunteer, Admin)**: `http://localhost:3000/`
+- **Hub Kiosk Terminal**: `http://localhost:3000/hub` or `http://localhost:3000/kiosk`
 
-### 4. Run Automated Test Suite
+### 3. Production Build
+To create a production-optimized build:
 ```bash
-npm test
-# Executes Jest test suite covering health, readiness, CORS, errors, and env validation
+npm run build
 ```
 
 ---
 
-## 🚀 Implementation Roadmap
+## 🌟 Key Features
 
-1. ✅ Product Definition & Architecture Specifications (`docs/`)
-2. ✅ Backend Foundation & Security Infrastructure (`backend/`)
-3. 🔄 Shared Domain Engine & Atomic Multi-Bucket Inventory Store
-4. 🔄 Authentication, Verification & Ephemeral Kiosk Session Services
-5. 🔄 Volunteer Application Shell & 3 km Discovery Map
-6. 🔄 Hub Self-Service Kiosk Terminal with QR Auth
-7. 🔄 Admin Operational Dashboard & Maker-Checker Queue
-8. 🔄 End-to-End System Validation & Integrity Invariants
+- **Public Landing Page**: Clean overview of JanaSeva's mission, impact statistics, and call-to-actions.
+- **Authentication**: User registration, login, phone/email verification, and password recovery.
+- **Volunteer Portal**:
+  - Live resource exploration with filtering by category (Food, Essentials, Clothing, Books).
+  - Hub discovery with distance metrics and status badges.
+  - Donation submission and reservation pass generation with QR code.
+  - Distribution tracking, activity logs, and personal impact dashboard.
+- **Admin Console**:
+  - Operational dashboard with critical metrics.
+  - Dual maker-checker request approval workflow.
+  - Multi-hub inventory management and batch tracking.
+  - Volunteer user directory and verification.
+- **Hub Kiosk Terminal** (`/hub`):
+  - Kiosk-ready interface with QR code scanner support for on-site item handovers.
+  - Donation intake and collection verification.

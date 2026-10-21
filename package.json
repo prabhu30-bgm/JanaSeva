@@ -1,18 +1,26 @@
 {
   "name": "janaseva",
   "version": "1.0.0",
-  "description": "JanaSeva Community Resource Redistribution Platform",
+  "description": "JanaSeva - Community Resource Redistribution Platform",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "npm --prefix backend start",
-    "dev": "npm --prefix backend run dev",
-    "test": "npm --prefix backend test"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "janaseva",
-    "community",
-    "platform"
-  ],
-  "author": "JanaSeva Team",
-  "license": "ISC"
+  "dependencies": {
+    "axios": "^1.7.9",
+    "jsqr": "^1.4.0",
+    "lucide-react": "^0.468.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
 }
